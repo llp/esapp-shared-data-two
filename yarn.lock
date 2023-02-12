@@ -972,6 +972,11 @@
   resolved "https://registry.yarnpkg.com/@extscreen/es-runtime/-/es-runtime-1.0.0.tgz#87a04f5f7f9c20a2a469ed3c5b50691181e37d50"
   integrity sha512-zvmqER9Evt9lYOEPw2gbu4T7UcLZJKTRgCs0eU1DZd5iKPeg5ROIX6SaEE7ehquWKGGZQQmgZkyZyMhBGgVskQ==
 
+"@extscreen/es-shared-data@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@extscreen/es-shared-data/-/es-shared-data-1.0.0.tgz#9111bb15364dc586295dbbcdc3be55a82e853b69"
+  integrity sha512-zK9mFBeP2kETAK2gI1gQbz1GPccXKZTgZtpNtq3rV+ld/9HivTILzBla+tt725Z5ErDf1AbTQsTcHvYdkSgB6w==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
