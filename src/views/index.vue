@@ -1,45 +1,29 @@
 <template>
-  <div class="index-root-view-css">
-    <span class="index-root-text-view-css">{{ text }}</span>
+  <div class="es-sdk-root-css">
+    <title class="es-sdk-content-title-css" :text="this.$options.name"/>
+    <div class="es-sdk-content-divider-css"/>
+    <div class="es-sdk-content-row-css">
+      <text text="Text"></text>
+      <text-button text="按钮" @onButtonClicked="onButtonClicked"/>
+    </div>
   </div>
 </template>
 
 <script>
-
 import {ESPage} from "@extscreen/es-core";
 
 export default {
-  name: 'index',
+  name: '共享数据测试二',
   mixins: [ESPage],
   data() {
-    return {
-      text: 'Hello World!'
-    };
+    return {};
   },
   methods: {
-    onESCreate(params) {
-
-    },
-  },
-  components: {}
+    onButtonClicked() {
+    }
+  }
 };
 </script>
 
-<style scoped>
-
-.index-root-view-css {
-  width: 1920px;
-  height: 1080px;
-  background-color: darkgray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.index-root-text-view-css {
-  font-size: 50px;
-  color: black;
-}
-
+<style>
 </style>

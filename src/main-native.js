@@ -2,6 +2,9 @@ import Vue from 'vue';
 
 Vue.config.productionTip = false;
 
+Vue.use(install);
+import './views/css/es-sdk-css.css';
+
 //-------------------Native Component---------------------
 import HippyVueNativeComponents from '@huantv/vue-native-components';
 
@@ -55,5 +58,6 @@ app.$start(() => {
 });
 //-------------------Set ESApp Instance---------------------
 import {setESApp} from "@extscreen/es-core";
+import {install} from "@/components";
 
 setESApp(app);
