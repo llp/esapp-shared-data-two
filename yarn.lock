@@ -957,6 +957,11 @@
   resolved "https://registry.yarnpkg.com/@extscreen/es-core/-/es-core-2.2.63.tgz#973172bd220b3604c9ed03fccf0bd8923dec8abb"
   integrity sha512-iBVliRWtJWicXZa6FVBGp6Lv0mOY+g+p1lG0XPKHG54G7fKxiVyoL1LIGN46Vr9sSHyuGJJFY4M2jUgN06PKuA==
 
+"@extscreen/es-group-data@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@extscreen/es-group-data/-/es-group-data-1.0.0.tgz#1ba50a7ef60a1f72f9a4fcfc6ec66645df96762a"
+  integrity sha512-vL1Gid1/Wuuc7IjYDU4ZAQNJxdIuC6shn8SV2PkS972kYje1Gyct4sUYffgfa0anQTRCLkYmqUXUgdXtRm8ltw==
+
 "@extscreen/es-log@2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@extscreen/es-log/-/es-log-2.2.0.tgz#c75b66c4a567d2974537fbbc3e7295b60613c645"
