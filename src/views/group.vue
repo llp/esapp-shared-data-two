@@ -75,7 +75,7 @@ import {ESPage, ESToast} from "@extscreen/es-core";
 import {ESGroupDataManager} from "@extscreen/es-group-data";
 
 export default {
-  name: '共享数据测试一',
+  name: '用户组共享数据测试二',
   mixins: [ESPage],
   data() {
     return {
@@ -93,11 +93,11 @@ export default {
       arraySharedValue: [],
       mapSharedValue: {},
 
-      secretKey: "22222222",
+      secretKey: '22222222',
 
       params: {
-        packageName: "es.test.data.shared.one",
-        secretKey: '111111111',
+        packageName: "es.test.data.shared.two",
+        secretKey: "111111111"
       },
     };
   },
@@ -186,7 +186,7 @@ export default {
         );
     },
     onPutIntButtonClicked() {
-      ESGroupDataManager.putInt(this.secretKey, "intKey", 11, 2)
+      ESGroupDataManager.putInt(this.secretKey, "intKey", 22, 2)
         .then(value => {
             ESToast.showToast("putInt success");
           },
@@ -196,7 +196,7 @@ export default {
         );
     },
     onPutLongButtonClicked() {
-      ESGroupDataManager.putLong(this.secretKey, "longKey", 11, 2)
+      ESGroupDataManager.putLong(this.secretKey, "longKey", 22, 2)
         .then(value => {
             ESToast.showToast("putLong success");
           },
@@ -206,7 +206,7 @@ export default {
         );
     },
     onPutStringButtonClicked() {
-      ESGroupDataManager.putString(this.secretKey, "stringKey", "11", 2)
+      ESGroupDataManager.putString(this.secretKey, "stringKey", "22", 2)
         .then(value => {
             ESToast.showToast("putString success");
           },
@@ -216,7 +216,7 @@ export default {
         );
     },
     onPutArrayButtonClicked() {
-      ESGroupDataManager.putArray(this.secretKey, "arrayKey", [11], 1)
+      ESGroupDataManager.putArray(this.secretKey, "arrayKey", [22], 1)
         .then(value => {
             ESToast.showToast("putArray success");
           },
@@ -226,7 +226,7 @@ export default {
         );
     },
     onPutMapButtonClicked() {
-      ESGroupDataManager.putMap(this.secretKey, "mapKey", {mapIntKey: 11}
+      ESGroupDataManager.putMap(this.secretKey, "mapKey", {mapIntKey: 22}
         , 1)
         .then(value => {
             ESToast.showToast("putMap success");
@@ -310,7 +310,7 @@ export default {
 
     },
     onPutSharedIntButtonClicked() {
-      ESGroupDataManager.putSharedInt(this.params, "intKey", 11)
+      ESGroupDataManager.putSharedInt(this.params, "intKey", 22)
         .then(value => {
             ESToast.showToast("putSharedInt success");
           },
@@ -320,7 +320,7 @@ export default {
         );
     },
     onPutSharedLongButtonClicked() {
-      ESGroupDataManager.putSharedLong(this.params, "longKey", 11)
+      ESGroupDataManager.putSharedLong(this.params, "longKey", 22)
         .then(value => {
             ESToast.showToast("putSharedLong success");
           },
@@ -340,7 +340,7 @@ export default {
         );
     },
     onPutSharedArrayButtonClicked() {
-      ESGroupDataManager.putSharedArray(this.params, "arrayKey", [11])
+      ESGroupDataManager.putSharedArray(this.params, "arrayKey", [22])
         .then(value => {
             ESToast.showToast("putSharedArray success");
           },
@@ -350,7 +350,7 @@ export default {
         );
     },
     onPutSharedMapButtonClicked() {
-      ESGroupDataManager.putSharedMap(this.params, "mapKey", {intKey: 11})
+      ESGroupDataManager.putSharedMap(this.params, "mapKey", {intKey: 22})
         .then(value => {
             ESToast.showToast("putSharedMap success");
           },
