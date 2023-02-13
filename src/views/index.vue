@@ -27,12 +27,20 @@
         <text-button text="getMap" @onButtonClicked="onGetMapButtonClicked"/>
       </div>
       <div class="es-sdk-content-row-css">
-        <text-button text="putBoolean" @onButtonClicked="onPutBooleanButtonClicked"/>
-        <text-button text="putInt" @onButtonClicked="onPutIntButtonClicked"/>
-        <text-button text="putLong" @onButtonClicked="onPutLongButtonClicked"/>
-        <text-button text="putString" @onButtonClicked="onPutStringButtonClicked"/>
-        <text-button text="putArray" @onButtonClicked="onPutArrayButtonClicked"/>
-        <text-button text="putMap" @onButtonClicked="onPutMapButtonClicked"/>
+        <text-button text="putBoolean" @onButtonClicked="onPutBooleanButtonClicked(1)"/>
+        <text-button text="putInt" @onButtonClicked="onPutIntButtonClicked(1)"/>
+        <text-button text="putLong" @onButtonClicked="onPutLongButtonClicked(1)"/>
+        <text-button text="putString" @onButtonClicked="onPutStringButtonClicked(1)"/>
+        <text-button text="putArray" @onButtonClicked="onPutArrayButtonClicked(1)"/>
+        <text-button text="putMap" @onButtonClicked="onPutMapButtonClicked(1)"/>
+      </div>
+      <div class="es-sdk-content-row-css">
+        <text-button text="putBoolean" @onButtonClicked="onPutBooleanButtonClicked(2)"/>
+        <text-button text="putInt" @onButtonClicked="onPutIntButtonClicked(2)"/>
+        <text-button text="putLong" @onButtonClicked="onPutLongButtonClicked(2)"/>
+        <text-button text="putString" @onButtonClicked="onPutStringButtonClicked(2)"/>
+        <text-button text="putArray" @onButtonClicked="onPutArrayButtonClicked(2)"/>
+        <text-button text="putMap" @onButtonClicked="onPutMapButtonClicked(2)"/>
       </div>
       <div class="es-sdk-content-divider-css"/>
       <div class="es-sdk-content-row-css">
@@ -171,8 +179,8 @@ export default {
         );
     },
     //--------------------------------------------------------------------------------------
-    onPutBooleanButtonClicked() {
-      ESSharedDataManager.putBoolean("booleanKey", true, 33)
+    onPutBooleanButtonClicked(mode) {
+      ESSharedDataManager.putBoolean("booleanKey", true, mode)
         .then(value => {
             ESToast.showToast("putBoolean success");
           },
@@ -181,8 +189,8 @@ export default {
           }
         );
     },
-    onPutIntButtonClicked() {
-      ESSharedDataManager.putInt("intKey", 10, 33)
+    onPutIntButtonClicked(mode) {
+      ESSharedDataManager.putInt("intKey", 22, mode)
         .then(value => {
             ESToast.showToast("putInt success");
           },
@@ -191,8 +199,8 @@ export default {
           }
         );
     },
-    onPutLongButtonClicked() {
-      ESSharedDataManager.putLong("longKey", 100, 33)
+    onPutLongButtonClicked(mode) {
+      ESSharedDataManager.putLong("longKey", 22, mode)
         .then(value => {
             ESToast.showToast("putLong success");
           },
@@ -201,8 +209,8 @@ export default {
           }
         );
     },
-    onPutStringButtonClicked() {
-      ESSharedDataManager.putString("stringKey", "hello", 33)
+    onPutStringButtonClicked(mode) {
+      ESSharedDataManager.putString("stringKey", "22", mode)
         .then(value => {
             ESToast.showToast("putString success");
           },
@@ -211,8 +219,8 @@ export default {
           }
         );
     },
-    onPutArrayButtonClicked() {
-      ESSharedDataManager.putArray("arrayKey", [33], 1)
+    onPutArrayButtonClicked(mode) {
+      ESSharedDataManager.putArray("arrayKey", [22], mode)
         .then(value => {
             ESToast.showToast("putArray success");
           },
@@ -221,9 +229,8 @@ export default {
           }
         );
     },
-    onPutMapButtonClicked() {
-      ESSharedDataManager.putMap("mapKey", {mapIntKey: 33}
-        , 1)
+    onPutMapButtonClicked(mode) {
+      ESSharedDataManager.putMap("mapKey", {mapIntKey: 22}, mode)
         .then(value => {
             ESToast.showToast("putMap success");
           },
