@@ -33,7 +33,7 @@
     "@extscreen/es-core": "2.2.63",
     "@extscreen/es-runtime": "1.0.0",
     "@extscreen/es-shared-data": "1.0.0",
-    "@extscreen/es-group-data": "1.0.0"
+    "@extscreen/es-group-data": "1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",

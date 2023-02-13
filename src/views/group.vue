@@ -93,8 +93,11 @@ export default {
       arraySharedValue: [],
       mapSharedValue: {},
 
+      secretKey: "22222222",
+
       params: {
-        packageName: "es.test.data.shared.one"
+        packageName: "es.test.data.shared.one",
+        secretKey: '111111111',
       },
     };
   },
@@ -173,7 +176,7 @@ export default {
     },
     //--------------------------------------------------------------------------------------
     onPutBooleanButtonClicked() {
-      ESGroupDataManager.putBoolean("booleanKey", true, 2)
+      ESGroupDataManager.putBoolean(this.secretKey, "booleanKey", true, 2)
         .then(value => {
             ESToast.showToast("putBoolean success");
           },
@@ -183,7 +186,7 @@ export default {
         );
     },
     onPutIntButtonClicked() {
-      ESGroupDataManager.putInt("intKey", 11, 2)
+      ESGroupDataManager.putInt(this.secretKey, "intKey", 11, 2)
         .then(value => {
             ESToast.showToast("putInt success");
           },
@@ -193,7 +196,7 @@ export default {
         );
     },
     onPutLongButtonClicked() {
-      ESGroupDataManager.putLong("longKey", 11, 2)
+      ESGroupDataManager.putLong(this.secretKey, "longKey", 11, 2)
         .then(value => {
             ESToast.showToast("putLong success");
           },
@@ -203,7 +206,7 @@ export default {
         );
     },
     onPutStringButtonClicked() {
-      ESGroupDataManager.putString("stringKey", "11", 2)
+      ESGroupDataManager.putString(this.secretKey, "stringKey", "11", 2)
         .then(value => {
             ESToast.showToast("putString success");
           },
@@ -213,7 +216,7 @@ export default {
         );
     },
     onPutArrayButtonClicked() {
-      ESGroupDataManager.putArray("arrayKey", [11], 1)
+      ESGroupDataManager.putArray(this.secretKey, "arrayKey", [11], 1)
         .then(value => {
             ESToast.showToast("putArray success");
           },
@@ -223,7 +226,7 @@ export default {
         );
     },
     onPutMapButtonClicked() {
-      ESGroupDataManager.putMap("mapKey", {mapIntKey: 11}
+      ESGroupDataManager.putMap(this.secretKey, "mapKey", {mapIntKey: 11}
         , 1)
         .then(value => {
             ESToast.showToast("putMap success");
