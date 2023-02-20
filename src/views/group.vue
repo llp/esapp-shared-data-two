@@ -96,7 +96,7 @@ export default {
       secretKey: '22222222',
 
       params: {
-        packageName: "es.test.data.shared.two",
+        packageName: "es.test.data.shared.one",
         secretKey: "111111111"
       },
     };
