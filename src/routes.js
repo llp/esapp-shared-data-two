@@ -1,11 +1,10 @@
 import index from "@/views/index";
-import group from "@/views/group";
 import error from "@/views/error";
 
 export default {
   disableAutoBack: true,
   limit: 5,
-  main: 'group',
+  main: 'index',
   error: 'error',
 
   routes: [
@@ -13,11 +12,6 @@ export default {
       path: '/index',
       name: 'index',
       component: index
-    },
-    {
-      path: '/group',
-      name: 'group',
-      component: group
     },
     {
       path: '/error',

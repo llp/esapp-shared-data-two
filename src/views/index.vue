@@ -27,20 +27,12 @@
         <text-button text="getMap" @onButtonClicked="onGetMapButtonClicked"/>
       </div>
       <div class="es-sdk-content-row-css">
-        <text-button text="putBoolean" @onButtonClicked="onPutBooleanButtonClicked(1)"/>
-        <text-button text="putInt" @onButtonClicked="onPutIntButtonClicked(1)"/>
-        <text-button text="putLong" @onButtonClicked="onPutLongButtonClicked(1)"/>
-        <text-button text="putString" @onButtonClicked="onPutStringButtonClicked(1)"/>
-        <text-button text="putArray" @onButtonClicked="onPutArrayButtonClicked(1)"/>
-        <text-button text="putMap" @onButtonClicked="onPutMapButtonClicked(1)"/>
-      </div>
-      <div class="es-sdk-content-row-css">
-        <text-button text="putBoolean" @onButtonClicked="onPutBooleanButtonClicked(2)"/>
-        <text-button text="putInt" @onButtonClicked="onPutIntButtonClicked(2)"/>
-        <text-button text="putLong" @onButtonClicked="onPutLongButtonClicked(2)"/>
-        <text-button text="putString" @onButtonClicked="onPutStringButtonClicked(2)"/>
-        <text-button text="putArray" @onButtonClicked="onPutArrayButtonClicked(2)"/>
-        <text-button text="putMap" @onButtonClicked="onPutMapButtonClicked(2)"/>
+        <text-button text="putBoolean" @onButtonClicked="onPutBooleanButtonClicked"/>
+        <text-button text="putInt" @onButtonClicked="onPutIntButtonClicked"/>
+        <text-button text="putLong" @onButtonClicked="onPutLongButtonClicked"/>
+        <text-button text="putString" @onButtonClicked="onPutStringButtonClicked"/>
+        <text-button text="putArray" @onButtonClicked="onPutArrayButtonClicked"/>
+        <text-button text="putMap" @onButtonClicked="onPutMapButtonClicked"/>
       </div>
       <div class="es-sdk-content-divider-css"/>
       <div class="es-sdk-content-row-css">
@@ -81,7 +73,6 @@
 <script>
 import {ESPage, ESToast} from "@extscreen/es-core";
 import {ESSharedDataManager} from "@extscreen/es-shared-data";
-import error from "@/views/error";
 
 export default {
   name: '共享数据测试二',
@@ -102,12 +93,18 @@ export default {
       arraySharedValue: [],
       mapSharedValue: {},
 
-      sharedPackageName: "es.test.data.shared.one",
+      secretKey: '22222222',
+
+      params: {
+        packageName: "es.test.data.shared.one",
+        secretKey: "111111111"
+      },
     };
   },
   methods: {
     onESCreate(params) {
-      ESSharedDataManager.init().then(() => {
+      ESSharedDataManager.init().then(
+        () => {
         },
         error => {
         })
@@ -179,8 +176,8 @@ export default {
         );
     },
     //--------------------------------------------------------------------------------------
-    onPutBooleanButtonClicked(mode) {
-      ESSharedDataManager.putBoolean("booleanKey", true, mode)
+    onPutBooleanButtonClicked() {
+      ESSharedDataManager.putBoolean(this.secretKey, "booleanKey", true, 2)
         .then(value => {
             ESToast.showToast("putBoolean success");
           },
@@ -189,8 +186,8 @@ export default {
           }
         );
     },
-    onPutIntButtonClicked(mode) {
-      ESSharedDataManager.putInt("intKey", 22, mode)
+    onPutIntButtonClicked() {
+      ESSharedDataManager.putInt(this.secretKey, "intKey", 11, 2)
         .then(value => {
             ESToast.showToast("putInt success");
           },
@@ -199,8 +196,8 @@ export default {
           }
         );
     },
-    onPutLongButtonClicked(mode) {
-      ESSharedDataManager.putLong("longKey", 22, mode)
+    onPutLongButtonClicked() {
+      ESSharedDataManager.putLong(this.secretKey, "longKey", 11, 2)
         .then(value => {
             ESToast.showToast("putLong success");
           },
@@ -209,8 +206,8 @@ export default {
           }
         );
     },
-    onPutStringButtonClicked(mode) {
-      ESSharedDataManager.putString("stringKey", "22", mode)
+    onPutStringButtonClicked() {
+      ESSharedDataManager.putString(this.secretKey, "stringKey", "11", 2)
         .then(value => {
             ESToast.showToast("putString success");
           },
@@ -219,8 +216,8 @@ export default {
           }
         );
     },
-    onPutArrayButtonClicked(mode) {
-      ESSharedDataManager.putArray("arrayKey", [22], mode)
+    onPutArrayButtonClicked() {
+      ESSharedDataManager.putArray(this.secretKey, "arrayKey", [11], 1)
         .then(value => {
             ESToast.showToast("putArray success");
           },
@@ -229,8 +226,9 @@ export default {
           }
         );
     },
-    onPutMapButtonClicked(mode) {
-      ESSharedDataManager.putMap("mapKey", {mapIntKey: 22}, mode)
+    onPutMapButtonClicked() {
+      ESSharedDataManager.putMap(this.secretKey, "mapKey", {mapIntKey: 11}
+        , 1)
         .then(value => {
             ESToast.showToast("putMap success");
           },
@@ -241,7 +239,7 @@ export default {
     },
     //-----------------------------------------------------------------
     onGetSharedBooleanButtonClicked() {
-      ESSharedDataManager.getSharedBoolean(this.sharedPackageName, "booleanKey", false)
+      ESSharedDataManager.getSharedBoolean(this.params, "booleanKey", false)
         .then(value => {
             this.booleanSharedValue = value;
           },
@@ -251,7 +249,7 @@ export default {
         );
     },
     onGetSharedIntButtonClicked() {
-      ESSharedDataManager.getSharedInt(this.sharedPackageName, "intKey", 0)
+      ESSharedDataManager.getSharedInt(this.params, "intKey", 0)
         .then(value => {
             this.intSharedValue = value;
           },
@@ -261,7 +259,7 @@ export default {
         );
     },
     onGetSharedLongButtonClicked() {
-      ESSharedDataManager.getSharedLong(this.sharedPackageName, "longKey", 0)
+      ESSharedDataManager.getSharedLong(this.params, "longKey", 0)
         .then(value => {
             this.longSharedValue = value;
           },
@@ -271,7 +269,7 @@ export default {
         );
     },
     onGetSharedStringButtonClicked() {
-      ESSharedDataManager.getSharedString(this.sharedPackageName, "stringKey", "")
+      ESSharedDataManager.getSharedString(this.params, "stringKey", "")
         .then(value => {
             this.stringSharedValue = value;
           },
@@ -281,7 +279,7 @@ export default {
         );
     },
     onGetSharedArrayButtonClicked() {
-      ESSharedDataManager.getSharedArray(this.sharedPackageName, "arrayKey", [])
+      ESSharedDataManager.getSharedArray(this.params, "arrayKey", [])
         .then(value => {
             this.arraySharedValue = value;
           },
@@ -291,7 +289,7 @@ export default {
         );
     },
     onGetSharedMapButtonClicked() {
-      ESSharedDataManager.getSharedMap(this.sharedPackageName, "mapKey", {})
+      ESSharedDataManager.getSharedMap(this.params, "mapKey", {})
         .then(value => {
             this.mapSharedValue = value;
           },
@@ -302,7 +300,7 @@ export default {
     },
     //--------------------------------------------------------------------------------------
     onPutSharedBooleanButtonClicked() {
-      ESSharedDataManager.putSharedBoolean(this.sharedPackageName, "booleanKey", false)
+      ESSharedDataManager.putSharedBoolean(this.params, "booleanKey", false)
         .then(value => {
             ESToast.showToast("putSharedBoolean success");
           },
@@ -313,7 +311,7 @@ export default {
 
     },
     onPutSharedIntButtonClicked() {
-      ESSharedDataManager.putSharedInt(this.sharedPackageName, "intKey", 22)
+      ESSharedDataManager.putSharedInt(this.params, "intKey", 11)
         .then(value => {
             ESToast.showToast("putSharedInt success");
           },
@@ -323,7 +321,7 @@ export default {
         );
     },
     onPutSharedLongButtonClicked() {
-      ESSharedDataManager.putSharedLong(this.sharedPackageName, "longKey", 22)
+      ESSharedDataManager.putSharedLong(this.params, "longKey", 11)
         .then(value => {
             ESToast.showToast("putSharedLong success");
           },
@@ -333,7 +331,7 @@ export default {
         );
     },
     onPutSharedStringButtonClicked() {
-      ESSharedDataManager.putSharedString(this.sharedPackageName, "stringKey", "22")
+      ESSharedDataManager.putSharedString(this.params, "stringKey", "11")
         .then(value => {
             ESToast.showToast("putSharedString success");
           },
@@ -343,7 +341,7 @@ export default {
         );
     },
     onPutSharedArrayButtonClicked() {
-      ESSharedDataManager.putSharedArray(this.sharedPackageName, "arrayKey", [22])
+      ESSharedDataManager.putSharedArray(this.params, "arrayKey", [11])
         .then(value => {
             ESToast.showToast("putSharedArray success");
           },
@@ -353,7 +351,7 @@ export default {
         );
     },
     onPutSharedMapButtonClicked() {
-      ESSharedDataManager.putSharedMap(this.sharedPackageName, "mapKey", {xxxKey: 22})
+      ESSharedDataManager.putSharedMap(this.params, "mapKey", {intKey: 11})
         .then(value => {
             ESToast.showToast("putSharedMap success");
           },

@@ -8,9 +8,6 @@
 import {ESLog} from "@extscreen/es-log";
 import {
   ESApplication,
-  ESDevelopManager,
-  ESDeviceManager,
-  ESNetworkManager,
 } from '@extscreen/es-core';
 import BuildConfig from "@/build/BuildConfig";
 import {RuntimeDeviceManager} from "@extscreen/es-runtime";
