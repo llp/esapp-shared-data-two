@@ -187,7 +187,7 @@ export default {
         );
     },
     onPutIntButtonClicked() {
-      ESSharedDataManager.putInt(this.secretKey, "intKey", 11, 2)
+      ESSharedDataManager.putInt(this.secretKey, "intKey", 22, 2)
         .then(value => {
             ESToast.showToast("putInt success");
           },
@@ -197,7 +197,7 @@ export default {
         );
     },
     onPutLongButtonClicked() {
-      ESSharedDataManager.putLong(this.secretKey, "longKey", 11, 2)
+      ESSharedDataManager.putLong(this.secretKey, "longKey", 22, 2)
         .then(value => {
             ESToast.showToast("putLong success");
           },
@@ -207,7 +207,7 @@ export default {
         );
     },
     onPutStringButtonClicked() {
-      ESSharedDataManager.putString(this.secretKey, "stringKey", "11", 2)
+      ESSharedDataManager.putString(this.secretKey, "stringKey", "22", 2)
         .then(value => {
             ESToast.showToast("putString success");
           },
@@ -217,7 +217,7 @@ export default {
         );
     },
     onPutArrayButtonClicked() {
-      ESSharedDataManager.putArray(this.secretKey, "arrayKey", [11], 1)
+      ESSharedDataManager.putArray(this.secretKey, "arrayKey", [22], 1)
         .then(value => {
             ESToast.showToast("putArray success");
           },
@@ -227,7 +227,7 @@ export default {
         );
     },
     onPutMapButtonClicked() {
-      ESSharedDataManager.putMap(this.secretKey, "mapKey", {mapIntKey: 11}
+      ESSharedDataManager.putMap(this.secretKey, "mapKey", {mapIntKey: 22}
         , 1)
         .then(value => {
             ESToast.showToast("putMap success");
@@ -311,7 +311,7 @@ export default {
 
     },
     onPutSharedIntButtonClicked() {
-      ESSharedDataManager.putSharedInt(this.params, "intKey", 11)
+      ESSharedDataManager.putSharedInt(this.params, "intKey", 22)
         .then(value => {
             ESToast.showToast("putSharedInt success");
           },
@@ -321,7 +321,7 @@ export default {
         );
     },
     onPutSharedLongButtonClicked() {
-      ESSharedDataManager.putSharedLong(this.params, "longKey", 11)
+      ESSharedDataManager.putSharedLong(this.params, "longKey", 22)
         .then(value => {
             ESToast.showToast("putSharedLong success");
           },
@@ -331,7 +331,7 @@ export default {
         );
     },
     onPutSharedStringButtonClicked() {
-      ESSharedDataManager.putSharedString(this.params, "stringKey", "11")
+      ESSharedDataManager.putSharedString(this.params, "stringKey", "22")
         .then(value => {
             ESToast.showToast("putSharedString success");
           },
@@ -341,7 +341,7 @@ export default {
         );
     },
     onPutSharedArrayButtonClicked() {
-      ESSharedDataManager.putSharedArray(this.params, "arrayKey", [11])
+      ESSharedDataManager.putSharedArray(this.params, "arrayKey", [22])
         .then(value => {
             ESToast.showToast("putSharedArray success");
           },
@@ -351,7 +351,7 @@ export default {
         );
     },
     onPutSharedMapButtonClicked() {
-      ESSharedDataManager.putSharedMap(this.params, "mapKey", {intKey: 11})
+      ESSharedDataManager.putSharedMap(this.params, "mapKey", {intKey: 22})
         .then(value => {
             ESToast.showToast("putSharedMap success");
           },
